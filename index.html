@@ -7,26 +7,15 @@
 <style>
   *{margin:0;padding:0;box-sizing:border-box}
   :root{
-    --navy:#0a1628;
-    --navy-mid:#1a3a6b;
-    --blue:#1e5fad;
-    --blue-light:#3a8fd4;
-    --blue-pale:#e6f1fb;
-    --blue-soft:#b5d4f4;
-    --white:#ffffff;
-    --gray-50:#f8f9fa;
-    --gray-100:#f1f3f5;
-    --gray-200:#dee2e6;
-    --gray-500:#6c757d;
-    --gray-700:#495057;
-    --gray-900:#212529;
-    --text:#1a1a2e;
-    --text-muted:#5a6878;
+    --navy:#0a1628;--navy-mid:#1a3a6b;--blue:#1e5fad;--blue-light:#3a8fd4;
+    --blue-pale:#e6f1fb;--blue-soft:#b5d4f4;
+    --gray-50:#f8f9fa;--gray-100:#f1f3f5;--gray-200:#dee2e6;
+    --gray-500:#6c757d;--gray-700:#495057;--gray-900:#212529;
+    --text:#1a1a2e;--text-muted:#5a6878;
   }
   html{scroll-behavior:smooth}
   body{font-family:'Segoe UI',system-ui,-apple-system,sans-serif;color:var(--text);background:#fff;font-size:16px;line-height:1.7}
 
-  /* NAV */
   nav{position:fixed;top:0;width:100%;background:var(--navy);z-index:100;padding:0 2rem}
   .nav-inner{max-width:1100px;margin:auto;display:flex;align-items:center;justify-content:space-between;height:56px}
   .nav-brand{color:#fff;font-weight:600;font-size:1rem;letter-spacing:.02em;text-decoration:none}
@@ -34,11 +23,9 @@
   .nav-links a{color:rgba(255,255,255,.8);text-decoration:none;font-size:.875rem;transition:color .2s}
   .nav-links a:hover{color:#fff}
 
-  /* SECTIONS */
   section{padding:5rem 2rem}
   .container{max-width:1000px;margin:auto}
 
-  /* HERO */
   #hero{background:var(--navy);padding:7rem 2rem 5rem;min-height:100vh;display:flex;align-items:center}
   .hero-grid{display:grid;grid-template-columns:1fr auto;gap:3rem;align-items:center;max-width:1000px;margin:auto;width:100%}
   .hero-name{font-size:2.6rem;font-weight:700;color:#fff;line-height:1.2;margin-bottom:.5rem}
@@ -53,14 +40,12 @@
   .btn-primary:hover{background:#2979c2}
   .btn-outline{border:1px solid rgba(255,255,255,.35);color:rgba(255,255,255,.9)}
   .btn-outline:hover{border-color:#fff;color:#fff}
-  .avatar-circle{width:180px;height:180px;border-radius:50%;background:linear-gradient(135deg,var(--blue-light),var(--navy-mid));display:flex;align-items:center;justify-content:center;font-size:4rem;font-weight:700;color:#fff;border:4px solid rgba(255,255,255,.15);flex-shrink:0}
+  .avatar{width:200px;height:200px;border-radius:50%;object-fit:cover;object-position:center top;border:4px solid rgba(255,255,255,.2);flex-shrink:0}
 
-  /* SECTION TITLES */
   .section-header{margin-bottom:2.5rem}
   .section-title{font-size:1.6rem;font-weight:700;color:var(--navy);border-left:4px solid var(--blue-light);padding-left:.9rem;margin-bottom:.3rem}
   .section-sub{font-size:.9rem;color:var(--text-muted);padding-left:1.2rem}
 
-  /* RESEARCH */
   #research{background:#fff}
   .pub-card{border:1px solid var(--gray-200);border-radius:10px;padding:1.4rem 1.6rem;margin-bottom:1rem;transition:.2s}
   .pub-card:hover{border-color:var(--blue-light);box-shadow:0 2px 12px rgba(30,95,173,.07)}
@@ -71,9 +56,7 @@
   .pub-link{font-size:.8rem;color:var(--blue);text-decoration:none;font-weight:500}
   .pub-link:hover{text-decoration:underline}
   .badge{display:inline-block;background:var(--blue-pale);color:var(--blue);font-size:.7rem;padding:.2rem .6rem;border-radius:4px;font-weight:600;margin-left:.5rem;vertical-align:middle}
-  .badge-wp{background:#fff7e6;color:#b86e00}
 
-  /* TEACHING */
   #teaching{background:var(--gray-50)}
   .course-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1rem}
   .course-card{background:#fff;border:1px solid var(--gray-200);border-radius:10px;padding:1.3rem 1.5rem}
@@ -83,15 +66,26 @@
   .course-terms{display:flex;flex-wrap:wrap;gap:.4rem;margin-top:.7rem}
   .term{font-size:.72rem;background:var(--blue-pale);color:#0c447c;padding:.2rem .55rem;border-radius:4px}
 
-  /* EDUCATION */
   #education{background:#fff}
   .edu-item{display:flex;gap:1.2rem;align-items:flex-start;margin-bottom:1.6rem}
   .edu-dot{width:12px;height:12px;border-radius:50%;background:var(--blue-light);margin-top:.45rem;flex-shrink:0}
   .edu-degree{font-size:1rem;font-weight:600;color:var(--navy)}
   .edu-school{font-size:.9rem;color:var(--blue)}
   .edu-years{font-size:.82rem;color:var(--text-muted)}
+  .edu-detail{font-size:.85rem;color:var(--text-muted);margin-top:.2rem}
 
-  /* CONTACT */
+  #honors{background:var(--gray-50)}
+  .honor-list{list-style:none;display:flex;flex-direction:column;gap:.75rem}
+  .honor-list li{display:flex;gap:.9rem;align-items:flex-start;font-size:.93rem;color:var(--gray-700)}
+  .honor-list li::before{content:"";width:8px;height:8px;border-radius:50%;background:var(--blue-light);margin-top:.55rem;flex-shrink:0}
+
+  #skills{background:#fff}
+  .skills-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:1rem}
+  .skill-card{background:var(--gray-50);border:1px solid var(--gray-200);border-radius:10px;padding:1.1rem 1.3rem}
+  .skill-label{font-size:.75rem;font-weight:700;color:var(--blue);text-transform:uppercase;letter-spacing:.05em;margin-bottom:.5rem}
+  .skill-tags{display:flex;flex-wrap:wrap;gap:.4rem}
+  .skill-tag{font-size:.78rem;background:#fff;border:1px solid var(--gray-200);color:var(--gray-700);padding:.2rem .6rem;border-radius:4px}
+
   #contact{background:var(--navy);color:#fff}
   .contact-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:1.5rem;margin-top:2rem}
   .contact-item{display:flex;flex-direction:column;gap:.3rem}
@@ -101,12 +95,11 @@
   .contact-val a:hover{text-decoration:underline}
   .contact-title{font-size:1.6rem;font-weight:700;color:#fff;border-left:4px solid var(--blue-light);padding-left:.9rem}
 
-  /* FOOTER */
   footer{background:var(--navy);border-top:1px solid rgba(255,255,255,.08);padding:1.2rem 2rem;text-align:center;font-size:.8rem;color:rgba(255,255,255,.4)}
 
   @media(max-width:700px){
     .hero-grid{grid-template-columns:1fr}
-    .avatar-circle{display:none}
+    .avatar{display:none}
     .hero-name{font-size:2rem}
   }
 </style>
@@ -120,12 +113,12 @@
       <li><a href="#research">Research</a></li>
       <li><a href="#teaching">Teaching</a></li>
       <li><a href="#education">Education</a></li>
+      <li><a href="#honors">Honors</a></li>
       <li><a href="#contact">Contact</a></li>
     </ul>
   </div>
 </nav>
 
-<!-- HERO -->
 <section id="hero">
   <div class="hero-grid">
     <div>
@@ -136,103 +129,90 @@
         College of Business · University of Texas at Arlington
       </div>
       <div class="tags">
-        <span class="tag">Information Systems</span>
+        <span class="tag">Artificial Intelligence</span>
+        <span class="tag">AI Agents</span>
         <span class="tag">Machine Learning</span>
-        <span class="tag">Human-AI Collaboration</span>
-        <span class="tag">Operations Management</span>
-        <span class="tag">Causal Inference</span>
+        <span class="tag">Business Analytics</span>
+        <span class="tag">Knowledge Management</span>
+        <span class="tag">Social Networks</span>
+        <span class="tag">Blockchain</span>
+        <span class="tag">Cybersecurity</span>
       </div>
       <p class="hero-bio">
-        My research sits at the intersection of information systems, human decision-making, and machine intelligence. I am interested in how algorithmic tools shape individual and organizational behavior, and how we can design better human-machine systems.
+        Ph.D. student in Information Systems at the University of Texas at Arlington, with prior graduate training in Technology Management. My research centers on artificial intelligence, AI agents and agent communities, machine learning, and business analytics. I am experienced as both a research and teaching assistant across multiple universities, with publications in knowledge management and a strong record of academic distinction.
       </p>
       <div class="hero-btns">
-        <a class="btn btn-primary" href="mailto:arian.esmaeili@uta.edu">Contact Me</a>
-        <a class="btn btn-outline" href="#">Download CV</a>
-        <a class="btn btn-outline" href="#">Google Scholar</a>
+        <a class="btn btn-primary" href="mailto:Arian.Esmaeili@uta.edu">Contact Me</a>
+        <a class="btn btn-outline" href="CV.pdf" target="_blank">Download CV</a>
+        <a class="btn btn-outline" href="https://www.linkedin.com/in/arian-esmaeili-93936b78/" target="_blank">LinkedIn</a>
       </div>
     </div>
-    <div class="avatar-circle">AE</div>
+    <img class="avatar" src="photo.jpg" alt="Arian Esmaeili" />
   </div>
 </section>
 
-<!-- RESEARCH -->
 <section id="research">
   <div class="container">
     <div class="section-header">
       <div class="section-title">Research &amp; Publications</div>
-      <div class="section-sub">Working papers and published work</div>
+      <div class="section-sub">Published work and ongoing research</div>
     </div>
 
     <div class="pub-card">
-      <div class="pub-year">Working Paper <span class="badge badge-wp">Under Review</span></div>
-      <div class="pub-title">Title of Working Paper One</div>
-      <div class="pub-venue">Target journal: Information Systems Research</div>
-      <div class="pub-links">
-        <a class="pub-link" href="#">Abstract</a>
-        <a class="pub-link" href="#">SSRN</a>
-      </div>
+      <div class="pub-year">2019 <span class="badge">Conference</span></div>
+      <div class="pub-title">A Framework for Investigating the Barriers to Implementing Knowledge Management in Iranian Organizations: A Meta-Synthesis Approach</div>
+      <div class="pub-venue">Ghorbani, A., &amp; Esmaeili, A. · 2nd International Congress on Science &amp; Engineering · Hamburg, Germany</div>
     </div>
 
     <div class="pub-card">
-      <div class="pub-year">Working Paper <span class="badge badge-wp">In Progress</span></div>
-      <div class="pub-title">Title of Working Paper Two</div>
-      <div class="pub-venue">Target journal: MIS Quarterly</div>
-      <div class="pub-links">
-        <a class="pub-link" href="#">Abstract</a>
-      </div>
+      <div class="pub-year">Working Paper <span class="badge" style="background:#fff7e6;color:#b86e00">In Progress</span></div>
+      <div class="pub-title">Current Research Project — Title Coming Soon</div>
+      <div class="pub-venue">University of Texas at Arlington · Advisor: Dr. Mahyar Vaghefi</div>
     </div>
 
     <div class="pub-card">
-      <div class="pub-year">2024 <span class="badge">Published</span></div>
-      <div class="pub-title">Title of Published Paper</div>
-      <div class="pub-venue">Venue or Conference Name · Proceedings</div>
-      <div class="pub-links">
-        <a class="pub-link" href="#">PDF</a>
-        <a class="pub-link" href="#">DOI</a>
-      </div>
+      <div class="pub-year">Working Paper <span class="badge" style="background:#fff7e6;color:#b86e00">In Progress</span></div>
+      <div class="pub-title">Current Research Project — Title Coming Soon</div>
+      <div class="pub-venue">University of Texas at Arlington · Advisor: Dr. Sridhar Nerur</div>
     </div>
   </div>
 </section>
 
-<!-- TEACHING -->
 <section id="teaching">
   <div class="container">
     <div class="section-header">
       <div class="section-title">Teaching</div>
-      <div class="section-sub">Courses supported as graduate teaching assistant</div>
+      <div class="section-sub">Courses supported as graduate teaching assistant at UT Arlington</div>
     </div>
     <div class="course-grid">
       <div class="course-card">
-        <div class="course-code">INSY 5336</div>
-        <div class="course-name">Python Programming</div>
-        <div class="course-role">Graduate Teaching Assistant</div>
-        <div class="course-terms">
-          <span class="term">Spring 2025</span>
-          <span class="term">Fall 2024</span>
-        </div>
+        <div class="course-code">INSY 4391</div>
+        <div class="course-name">Studies in Information Systems</div>
+        <div class="course-role">Teaching Assistant</div>
+        <div class="course-terms"><span class="term">Spring 2026</span></div>
       </div>
       <div class="course-card">
-        <div class="course-code">BANA 3308</div>
-        <div class="course-name">Introduction to Business Analytics</div>
-        <div class="course-role">Graduate Teaching Assistant</div>
-        <div class="course-terms">
-          <span class="term">Spring 2026</span>
-          <span class="term">Fall 2025</span>
-        </div>
+        <div class="course-code">INSY 5339</div>
+        <div class="course-name">Principles of Business Data Mining</div>
+        <div class="course-role">Teaching Assistant</div>
+        <div class="course-terms"><span class="term">Spring 2026</span><span class="term">Fall 2026</span><span class="term">Summer 2025</span></div>
       </div>
       <div class="course-card">
-        <div class="course-code">INSY 5378</div>
-        <div class="course-name">Data Science: A Programming Approach</div>
-        <div class="course-role">Graduate Teaching Assistant</div>
-        <div class="course-terms">
-          <span class="term">Spring 2026</span>
-        </div>
+        <div class="course-code">INSY 3300</div>
+        <div class="course-name">Introduction to Programming</div>
+        <div class="course-role">Teaching Assistant</div>
+        <div class="course-terms"><span class="term">Spring 2026</span><span class="term">Fall 2026</span></div>
+      </div>
+      <div class="course-card">
+        <div class="course-code">INSY 3305</div>
+        <div class="course-name">Information Systems Analysis &amp; Design</div>
+        <div class="course-role">Teaching Assistant</div>
+        <div class="course-terms"><span class="term">Summer 2025</span><span class="term">Spring 2025</span></div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- EDUCATION -->
 <section id="education">
   <div class="container">
     <div class="section-header">
@@ -241,54 +221,98 @@
     <div class="edu-item">
       <div class="edu-dot"></div>
       <div>
-        <div class="edu-degree">Ph.D. in Information Systems <span style="font-weight:400;color:var(--text-muted)">— In Progress</span></div>
-        <div class="edu-school">University of Texas at Arlington</div>
-        <div class="edu-years">2023 – Present · Arlington, TX</div>
+        <div class="edu-degree">Ph.D. in Business Administration — Information Systems</div>
+        <div class="edu-school">University of Texas at Arlington, College of Business</div>
+        <div class="edu-years">2025 – Present · Arlington, TX</div>
+        <div class="edu-detail">Department of Information Systems &amp; Operations Management</div>
       </div>
     </div>
     <div class="edu-item">
       <div class="edu-dot"></div>
       <div>
-        <div class="edu-degree">M.S. — [Your Master's Degree]</div>
-        <div class="edu-school">[Your University]</div>
-        <div class="edu-years">[Year]</div>
+        <div class="edu-degree">M.S. in Business Administration — Technology Management</div>
+        <div class="edu-school">Shahid Beheshti University · Tehran, Iran</div>
+        <div class="edu-years">Sep 2017 – Mar 2021 · GPA: 17.66 / 20</div>
+        <div class="edu-detail">Thesis: A Framework of Characteristics of Successful Projects in Obtaining Financial Facilities</div>
       </div>
     </div>
     <div class="edu-item">
       <div class="edu-dot"></div>
       <div>
-        <div class="edu-degree">B.S. — [Your Bachelor's Degree]</div>
-        <div class="edu-school">[Your University]</div>
-        <div class="edu-years">[Year]</div>
+        <div class="edu-degree">B.S. in Industrial Management</div>
+        <div class="edu-school">Shahid Beheshti University · Tehran, Iran</div>
+        <div class="edu-years">Sep 2012 – Oct 2016 · GPA: 16.08 / 20</div>
+        <div class="edu-detail">Department of Management and Accounting</div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- CONTACT -->
+<section id="honors">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-title">Honors &amp; Awards</div>
+    </div>
+    <ul class="honor-list">
+      <li>Member, Alpha Chi National College Honor Society</li>
+      <li>Ranked 86th in the Iranian Nationwide University Entrance Exam for the Master's program in Business Administration (out of 94,434 candidates)</li>
+      <li>Recruited to the National Organization for Development of Exceptional Talents (NODET) through competitive multi-stage examinations</li>
+      <li>National scholarship covering full tuition for both Master's and Bachelor's degrees</li>
+      <li>GRE General Test: 325 / 340 — Quantitative 165, Verbal 160</li>
+      <li>IELTS: 8.0 / 9 — Reading 9.0, Listening 9.0</li>
+      <li>National Tennis Chair Umpire of Iran · National Padel Umpire of Iran</li>
+    </ul>
+  </div>
+</section>
+
+<section id="skills" style="background:#fff">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-title">Skills</div>
+    </div>
+    <div class="skills-grid">
+      <div class="skill-card">
+        <div class="skill-label">Programming</div>
+        <div class="skill-tags"><span class="skill-tag">Python</span><span class="skill-tag">R</span></div>
+      </div>
+      <div class="skill-card">
+        <div class="skill-label">Statistical Software</div>
+        <div class="skill-tags"><span class="skill-tag">SPSS</span><span class="skill-tag">STATA</span><span class="skill-tag">SAS</span><span class="skill-tag">MATLAB</span></div>
+      </div>
+      <div class="skill-card">
+        <div class="skill-label">Data Analytics</div>
+        <div class="skill-tags"><span class="skill-tag">DOMO</span><span class="skill-tag">Google Analytics</span></div>
+      </div>
+      <div class="skill-card">
+        <div class="skill-label">Languages</div>
+        <div class="skill-tags"><span class="skill-tag">Persian</span><span class="skill-tag">English</span><span class="skill-tag">German</span><span class="skill-tag">Arabic</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
 <section id="contact">
   <div class="container">
     <div class="contact-title">Contact</div>
     <div class="contact-grid">
       <div class="contact-item">
-        <span class="contact-label">Email</span>
-        <span class="contact-val"><a href="mailto:arian.esmaeili@uta.edu">arian.esmaeili@uta.edu</a></span>
+        <span class="contact-label">Email (UTA)</span>
+        <span class="contact-val"><a href="mailto:Arian.Esmaeili@uta.edu">Arian.Esmaeili@uta.edu</a></span>
       </div>
       <div class="contact-item">
-        <span class="contact-label">Office</span>
-        <span class="contact-val">College of Business<br>UT Arlington, TX 76019</span>
+        <span class="contact-label">Email (Personal)</span>
+        <span class="contact-val"><a href="mailto:Arian.Esmaeili@gmail.com">Arian.Esmaeili@gmail.com</a></span>
+      </div>
+      <div class="contact-item">
+        <span class="contact-label">Location</span>
+        <span class="contact-val">Arlington, Texas, USA</span>
       </div>
       <div class="contact-item">
         <span class="contact-label">Links</span>
         <span class="contact-val">
-          <a href="#">Google Scholar</a><br>
-          <a href="#">LinkedIn</a><br>
-          <a href="#">GitHub</a>
+          <a href="https://www.linkedin.com/in/arian-esmaeili-93936b78/" target="_blank">LinkedIn</a><br>
+          <a href="CV.pdf" target="_blank">Download CV</a>
         </span>
-      </div>
-      <div class="contact-item">
-        <span class="contact-label">Office Hours</span>
-        <span class="contact-val">By appointment<br>Email to schedule</span>
       </div>
     </div>
   </div>
